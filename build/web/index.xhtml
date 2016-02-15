@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+       xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+       xmlns:p="http://primefaces.org/ui"
+      >
+    <h:head>
+        <title>LOLtoxics</title>
+      
+    </h:head>
+    <h:body>
+        <script src="#{resource['js/jquery.js']}"></script>
+        
+        <script src="#{resource['js/riot-games-api-nodejs.js']}"></script>
+        <script src="#{resource['js/require.js']}"></script>
+        <script src="#{resource['js/main.js']}"></script>
+        <h:outputStylesheet library="css" name="estilo.css"  />
+        
+        
+        
+        <header class="cabecalho">
+           <div class="containerCabecalho clearfix"> 
+            <a href="index.xhtml"><img alt="loltoxics" src="#{resource['img/logo.png']}"></img></a>
+            
+            <nav class="menuGenerico">
+             <ul class="clearfix">
+               <li class="selecionado"><a href="index.xhtml">Home</a></li>
+               <li><a href="rankingGeral.xhtml">Ranking Geral</a></li>
+              
+               <li><a href="loginUsuario.xhtml">Login</a></li>
+             </ul>
+           </nav>
+          </div>  
+        </header>
+           <section class="containerPesquisa clearfix">
+              <h:form id="formularioPesquisa">
+                  <h:inputText id="nome" value="#{trollAPIBean.nomeTrollPesquisa}" pt:placeholder="Encontre o troll..."/>
+                 
+                   <h:commandButton value="Pesquisar" action="#{trollAPIBean.resultadoPesquisa()}"></h:commandButton>
+               </h:form>
+               
+             
+           </section>
+        <style>
+            object {
+                display: none;
+            }
+        </style>
+<main>
+<section class="containerGeral clearfix">
+  <header>
+
+  </header>  
+    <div class="blocoRankingHome">
+    
+    <h:dataTable value="#{trollBean.listar10Trolls()}" var="troll"
+                 styleClass="tableTrollsHome">
+  
+            <h:column>
+                <f:facet name="header">
+                  Os 10 mais trolls
+                </f:facet>
+                <h:outputText value="#{troll.nometroll}" />
+            </h:column>
+            
+            <h:column class="pontuacao">           
+             <f:facet name="header">
+                  Pontuação
+               </f:facet>
+               <h:outputText value="#{troll.pontuacao}" />
+            </h:column>
+                   
+        </h:dataTable>
+        
+    </div>
+    
+        <div class="blocoRankingHome">
+    
+    <h:dataTable class="tableTrollsHome" value="#{trollBean.listarUltimosTrolls()}" var="troll">
+    
+            <h:column>
+                <f:facet name="header">
+                  Últimos reports
+                </f:facet>
+                <h:outputText value="#{troll.getNomeTroll()}" />
+            </h:column>
+            
+           
+            
+     
+            
+          
+        </h:dataTable>
+        
+    </div>
+   
+    </section>
+    </main>
+           
+           <script>
+               $(document).ready(function(){
+                  
+                 
+      
+              
+               });
+               
+           </script>
+    </h:body>
+</html>

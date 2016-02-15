@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>LOLtoxics</title>
+            
+    </h:head>
+    <h:body>
+        
+ <script>
+     
+   function callbackStatus(response) {
+        if(response.status === 'connected'){
+            console.log('connectado')
+            startAPI();
+        } else if (response.status === 'not_authorized'){
+            console.log('por favor faça login');
+        }
+        else {
+            console.log('faca login no facebook');
+        }
+   } 
+     
+     
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1658605061028420',
+      xfbml      : true,
+      version    : 'v2.3'
+    });
+    
+    FB.getLoginStatus(function(response){
+        callbackStatus(response);
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+   
+   function startAPI(){
+       FB.api('/me', function(response){
+           console.log(response);
+       });
+   }
+   
+    function logout(){
+       FB.logout(function(response){
+           callbackStatus(response);
+       });
+   }
+</script>
+        <h:outputScript library="primefaces" name="js/jquery.js" target="head" />
+         <h:outputStylesheet library="css" name="estilo.css"  />
+        <header class="soloLogo">
+            <a href="index.xhtml">
+                <img alt="loltoxics" src="#{resource['img/logo.png']}"></img>
+            </a>
+        </header>
+        
+<main>
+<section class="containerLoginCadastro">
+    <header>LOGIN</header>
+    <div class="textoFormUsuario">
+        Por favor, conecte-se com sua conta do facebook.
+    </div>
+		<h:form id="loginForm">
+			<p:button class="botaoLoginFacebook" value="Logar com Facebook" href="#{loginPageCode.facebookUrlAuth}" />
+                    <br/><br/>
+			<h:outputText value="#{loginPageCode.userFromSession}"></h:outputText>
+		</h:form>
+    
+</section>
+
+    </main>
+    </h:body>
+</html>
+

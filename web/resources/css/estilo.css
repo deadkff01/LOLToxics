@@ -1,0 +1,514 @@
+
+@import url("#{resource['css/normalize.css']}");
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:800,400);
+
+* {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+a {
+  text-decoration: none;
+}
+
+html,body {
+  height: 100%;
+	font-size: 62.5%;
+  background: #171717;
+  font-family: 'Open Sans', sans-serif;
+  min-height: 500px;
+  
+}
+body {
+  background: url("#{resource['img/fundoSite.svg']}") no-repeat center center #171717;
+  background-size: 100%;
+}
+ object {
+         display: none;
+}
+
+label {
+        color: #fff;        
+ }
+ input {
+     border-radius: 0 !important;
+     border: none;
+ }
+ 
+.cabecalho {
+    background: none repeat scroll 0% 0% rgba(42, 40, 40, 0.76);
+}
+
+.cabecalho .logo {
+  text-align: center;
+}
+
+.soloLogo {  
+  text-align: center;
+}
+
+.containerCabecalho {
+    width: 1100px;
+    margin: 0px auto;
+    height: 85px;
+}
+
+.containerCabecalho a {
+    font-size: 1.8rem;
+}
+
+.containerCabecalho .linkLogo {
+    float: left;
+}
+
+.containerCabecalho img{
+    width: 220px;
+    height:83px;
+}
+
+.containerLoginCadastro {
+  border-bottom: 10px solid #47B224;
+  border-left: 10px solid #47B224;
+  border-right: 10px solid #47B224;
+  background: #343434;
+  font-size: 1.8rem;
+  width: 400px;
+  margin: 50px auto;
+  box-shadow: 0px 0px 2px #47B224;
+
+}
+.containerLoginCadastro header {
+  text-align: center;
+  background: #47B224;
+  text-transform: uppercase;
+  font-size: 3.0rem;
+  font-weight: bold;
+  color: #fff;
+
+}
+.containerLoginCadastro input{
+  border-radius: none;
+  border: 1px solid lightgray;
+  height: 36px;
+  color: gray;
+}
+.containerLoginCadastro input,
+.containerLoginCadastro label {
+  display: block;
+  width: 100%;
+  padding: 0px 2px;
+  -moz-box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+  box-sizing:border-box;
+}
+.containerLoginCadastro label:first-child{
+  margin: 0 0 10px 0;
+}
+
+.containerLoginCadastro label {
+    margin: 10px 0;
+    color: #fff;
+
+}
+
+.containerLoginCadastro span,
+#mesagemErroFormAdmin{
+    color: #ED1C24;
+}
+
+.textoFormUsuario {
+    width: 100%;
+    line-height: 18px;
+    text-align: center;
+    margin: 20px 0;
+    color: white;
+        
+}
+
+
+.containerLoginCadastro input[type="submit"] {
+  width: 100%;
+  height: 50px;
+  margin: 15px 0 0;
+  border-radius: none;
+  border: none;
+  background: #47B224;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #fff;
+}
+.containerLoginCadastro input[type="submit"]:hover {
+  background: #3A901D;
+}
+
+.containerLoginCadastro span {
+  display: block;
+  margin: 15px 0 0;
+}
+
+.containerLoginCadastro span a{
+  text-decoration: underline;
+  color: #3A901D;
+}
+
+.containerLoginCadastro .container {
+  padding: 20px;
+}
+
+form span {
+    display:block;
+    font-size: 1.5rem;
+    color: #3A901D;
+}
+
+.containerGeral {
+  background: rgba(42, 40, 40, 0.76);
+  font-size: 1.8rem;
+  width: 1000px;
+  margin: 50px auto;
+  padding: 0 0 20px 0;
+  
+}
+
+.containerGeral input {
+    color:#000;
+}
+.containerGeral header {
+  text-align: left;
+  background: #47B224;
+  text-transform: uppercase;
+  font-size: 2.0rem;
+  font-weight: bold;
+  color: #fff;
+  line-height: 60px;
+
+}
+
+.menuGenerico {
+    float: right;
+}
+.menuGenerico a {
+    float: left;
+}
+
+.menuGenerico ul {
+  list-style: none;
+  padding: 0;
+  margin: 0px;
+}
+
+.menuGenerico li:not(.nodeFacebook) {
+    float: left;
+    padding: 0px 20px;
+    margin: 21px 5px 0;
+    height: 45px;
+    line-height: 45px;
+}
+
+.menuGenerico li:last-child {
+  border-right: none;
+}
+.menuGenerico li.selecionado {
+  background: #32A120;
+
+}
+.menuGenerico li:not(.nodeFacebook):hover {
+  background: #32A120;
+}
+
+.nodeFacebook {
+    float: left;
+    padding: 0px 20px;
+    margin: 21px 5px 0px;
+    height: 45px;
+    line-height: 45px;
+    width: 214px;
+    color: #FFF;
+    font-size: 1.8rem;
+}
+.nodeFacebook .nomeUsuario{
+    margin-right: 10px;
+} 
+.nodeFacebook form {
+    /*width: 44px;*/
+    display: inline-block;
+}
+
+.menuGenerico li a {
+  color: #fff;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.elementoSelecionado {
+  background: #32A120 !important;
+}
+
+.rankingHome {
+  float: left;
+  width: 480px;
+  margin: 10px;
+}
+
+.rankingHome h1 {
+  color: #FF9900;
+  font-size: 2.2rem;
+  font-weight: normal;
+  padding: 10px;
+}
+
+
+.containerPesquisa {
+    background: none repeat scroll 0% 0% rgba(42, 40, 40, 0.76);
+    height: 53px;
+    width: 440px;
+    margin: 0px auto;
+    font-size: 1.8rem;
+}
+
+#formularioPesquisa input{
+    float: left;
+    margin: 10px;
+    border-radius: 0px;
+    border: none;
+}
+
+#formularioPesquisa input[type="text"] {
+    width: 300px;
+    padding: 2px 2px;
+    height: 30px;
+    
+}
+
+#formularioPesquisa input[type="submit"] {
+    width: 100px;
+    background: #32A120;
+    border: none;
+    color: #fff;
+    height: 30px;
+    
+}
+
+.controlesSistema {
+    width: 200px;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    margin-left: 200px;
+    text-align: right;
+    font-size: 1.6rem;
+    color: #47B224;
+}
+
+.blocoRankingHome {
+    width: 500px;
+    float: left;
+}
+
+.tableTrollsHome {
+    border: 1px solid #32A120;
+    color: #fff;
+    margin: 30px auto;
+}
+.tableTrollsHome a {
+    color:#32A120;
+}
+
+.tableTrollsHome th,
+.tableTrollsHome td{
+    border-bottom: 1px solid #32A120;
+    padding: 20px;
+    text-align: center;
+    
+}
+
+.tableTrollsHome th {
+    text-align: left;
+    background: #32A120;
+}
+
+.tableTrollsHome .pontuacao {
+    text-align: center;
+}
+
+/*********/
+
+.tabelInternas {
+    border: 1px solid #32A120;
+    color: #fff;
+    margin: 30px auto;
+}
+.tabelInternas a {
+    color:#32A120;
+}
+
+.tabelInternas th,
+.tabelInternas td{
+    border: 1px solid #32A120;
+    padding: 20px;
+    text-align: center;
+    
+}
+
+.tabelInternas th {
+    text-align: left;
+    background: #32A120;
+}
+
+.tabelInternas .pontuacao {
+    text-align: center;
+}
+
+#usuarioControle {
+    font-size: 15px;
+    color: #fff;
+}
+    
+#usuarioControle input{
+    color: #000;
+}
+
+
+.botaoLoginFacebook {
+  display: block;
+  margin: 48px auto 0;
+  position: relative;
+  line-height: 10px;
+  background:#47B224;
+  border: none;
+}
+
+.botaoLoginFacebook:hover {
+  background: #3A901D;
+}
+
+.botaoLoginFacebook span {
+    margin: 15px 0 !important;
+    color: white !important;
+    font-weight: bold !important;
+}
+
+.nomeUsuario {
+    margin-right: 10px;
+}
+
+.botaoSair {
+    
+    background: none repeat scroll 0% 0% transparent;
+    color: #32A120;
+    border: 1px solid #32A120;
+}
+.blocoResultadoPesquisa {
+    width: 100%;
+    float: left;
+    margin: 20px;
+    text-align: center;
+}
+.trollNode {
+   border: 1px solid #32A120;
+   display: inline-block;
+}
+
+.trollNode div {
+    float: left;
+    margin: 0px 0 0;
+    padding: 30px;
+    border-right: 1px solid #32A120;
+    height: 84px;
+    color: #fff;
+}
+
+.trollNode .botoes {
+     padding: 20px 30px;
+    border-right: none;
+}
+
+.botaoReport{
+  padding: 0px 20px;
+  height: 45px;
+  background: #9E1316;
+  border: none;
+}
+
+
+.containerRankingGeral {
+    text-align: center;
+        
+}
+
+.blocoRankingGeral{
+    display: inline-block;
+    width: 800px;
+    margin: 30px;
+    overflow: hidden;
+}
+
+.tableTrollsRankingGeral {
+    border: 1px solid #32A120;
+    color: #FFF;
+    width: 800px;
+   
+}
+
+.tableTrollsRankingGeral th {
+    text-align: left;
+    background: none repeat scroll 0% 0% #32A120;
+}
+
+.ui-datatable thead th, 
+.ui-datatable tbody td, 
+.ui-datatable tfoot td {
+    
+    padding: 20px !important;
+    overflow: hidden;
+    border-width: 1px;
+    border-style: none !important;
+}
+
+.tableTrollsRankingGeral tr {
+    border-bottom: 1px solid #32A120;
+}
+
+#j_idt9_paginator_top, 
+#j_idt16_paginator_top,
+.ui-corner-top {
+    display: none !important;
+}
+
+.ui-state-active {
+    background: none repeat scroll 0% 0% #32A120;
+}
+
+.blocoFormularioGerencia {
+    display: block;
+    margin: 0px auto;
+    width: 243px;
+}
+.blocoFormularioGerencia label {
+    display: block;
+}
+
+.botaoGenericoForm {
+    padding: 3px 10px;
+    background: #47B224;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff !important;
+    border: none;
+    display: block;
+    margin: 10px auto;
+    
+} 
+
+.containerInternas {
+    padding-top: 20px;
+}

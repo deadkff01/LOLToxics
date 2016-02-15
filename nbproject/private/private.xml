@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/home/deadkff01/NetBeansProjects/LOLtoxics/web/toxiclogado/editarTroll.xhtml</file>
+            <file>file:/home/deadkff01/NetBeansProjects/LOLtoxics/src/java/com/loltoxics/model/Role.java</file>
+            <file>file:/home/deadkff01/NetBeansProjects/LOLtoxics/web/usuariologado/rankingGeral.xhtml</file>
+            <file>file:/home/deadkff01/NetBeansProjects/LOLtoxics/src/java/com/loltoxics/dao/AdministradorDao.java</file>
+            <file>file:/home/deadkff01/NetBeansProjects/LOLtoxics/src/java/com/loltoxics/beans/RoleBean.java</file>
+            <file>file:/home/deadkff01/NetBeansProjects/LOLtoxics/web/index.xhtml</file>
+            <file>file:/home/deadkff01/NetBeansProjects/LOLtoxics/src/java/com/loltoxics/model/Usuario.java</file>
+            <file>file:/home/deadkff01/NetBeansProjects/LOLtoxics/src/java/com/loltoxics/beans/TrollAPIBean.java</file>
+            <file>file:/home/deadkff01/NetBeansProjects/LOLtoxics/src/java/com/loltoxics/dao/TrollDao.java</file>
+            <file>file:/home/deadkff01/NetBeansProjects/LOLtoxics/web/toxiclogado/editarAdmin.xhtml</file>
+            <file>file:/home/deadkff01/NetBeansProjects/LOLtoxics/web/usuariologado/resultadoPesquisa.xhtml</file>
+            <file>file:/home/deadkff01/NetBeansProjects/LOLtoxics/src/java/com/loltoxics/model/Reporte.java</file>
+            <file>file:/home/deadkff01/NetBeansProjects/LOLtoxics/src/java/com/loltoxics/beans/UsuarioBean.java</file>
+            <file>file:/home/deadkff01/NetBeansProjects/LOLtoxics/web/toxiclogado/trollsAdmin.xhtml</file>
+            <file>file:/home/deadkff01/NetBeansProjects/LOLtoxics/web/login.xhtml</file>
+            <file>file:/home/deadkff01/NetBeansProjects/LOLtoxics/web/resources/css/estilo.css</file>
+            <file>file:/home/deadkff01/NetBeansProjects/LOLtoxics/web/toxiclogado/editarRole.xhtml</file>
+            <file>file:/home/deadkff01/NetBeansProjects/LOLtoxics/src/java/com/loltoxics/beans/TrollBean.java</file>
+            <file>file:/home/deadkff01/NetBeansProjects/LOLtoxics/web/toxiclogado/gerenciarRole.xhtml</file>
+            <file>file:/home/deadkff01/NetBeansProjects/LOLtoxics/src/java/com/loltoxics/dao/RoleDao.java</file>
+            <file>file:/home/deadkff01/NetBeansProjects/LOLtoxics/src/java/com/loltoxics/beans/AdministradorBean.java</file>
+            <file>file:/home/deadkff01/NetBeansProjects/LOLtoxics/web/toxiclogado/homeAdmin.xhtml</file>
+            <file>file:/home/deadkff01/NetBeansProjects/LOLtoxics/src/java/hibernate.cfg.xml</file>
+            <file>file:/home/deadkff01/NetBeansProjects/LOLtoxics/web/toxiclogado/gerenciarAdmin.xhtml</file>
+            <file>file:/home/deadkff01/NetBeansProjects/LOLtoxics/src/java/com/loltoxics/model/Troll.java</file>
+            <file>file:/home/deadkff01/NetBeansProjects/LOLtoxics/src/java/com/loltoxics/dao/UsuarioDao.java</file>
+        </group>
+    </open-files>
+</project-private>

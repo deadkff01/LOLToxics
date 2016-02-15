@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>LOLtoxics</title>
+       
+    </h:head>
+    <h:body>
+     <h:outputStylesheet library="css" name="estilo.css"  />
+     <header class="cabecalho">
+           <div class="containerCabecalho clearfix"> 
+            <a class="linkLogo" href="index.xhtml">   
+             <img alt="loltoxics" src="#{resource['img/logo.png']}"></img>
+            </a>
+            
+            <nav class="menuGenerico">
+             <ul class="clearfix">
+                <li class=""><h:link value="Home" outcome="homeAdmin" /></li>
+
+                <li><h:link value="Admins" outcome="gerenciarAdmin" /></li>
+             
+                <li class="selecionado"><h:link value="Gerenciar Trolls" outcome="trollsAdmin" /></li>
+                  <li><h:link value="Gerenciar Roles" outcome="gerenciarRole" /></li>
+                 <li class="nodeFacebook">
+                    
+                         <span id="nomeUsuario">
+                          <h:outputText value="#{administrador.nome}" />
+                        </span> 
+                      <h:form>
+                        <h:commandButton class="botaoSair" value="Sair"  action="#{usuarioAdministradorBean.encerrarSession()}"/>
+                    </h:form>
+                </li>  
+             </ul>
+           </nav>
+          </div>  
+        </header>
+     
+     
+        <style>
+            object {
+                display: none;
+            }
+        </style>
+<main>
+
+    
+<section class="containerGeral containerInternas clearfix">
+
+      <h:form>  
+        <h:dataTable value="#{trollBean.listarTrolls()}" styleClass="tabelInternas" var="troll" border="1">
+              <h:column>
+                <f:facet name="header">
+                  ID
+                </f:facet>
+                <h:outputText value="#{troll.idtroll}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                  Nome
+                </f:facet>
+                <h:outputText value="#{troll.nometroll}" />
+            </h:column>
+            
+            <h:column>           
+             <f:facet name="header">
+                  Pontuação
+               </f:facet>
+               <h:outputText value="#{troll.pontuacao}" />
+            </h:column>
+                 
+            <h:column>
+                <f:facet name="header">
+                  Remover
+               </f:facet>
+               <h:commandLink
+                   value="Remover" actionListener="#{trollBean.removerTroll(troll)}" />
+            </h:column>
+            
+            <h:column>
+                <f:facet name="header">
+                  Editar
+               </f:facet>
+               <h:commandLink
+                    value="Editar" action="#{trollBean.readTroll(troll)}" />
+             
+            </h:column>
+            
+      
+            
+          
+        </h:dataTable>
+           </h:form>  
+    </section>
+    </main>
+    </h:body>
+</html>

@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+       xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+       xmlns:p="http://primefaces.org/ui"
+      >
+    <h:head>
+        <title>LOLtoxics</title>
+      
+             
+        
+    </h:head>
+    <h:body>
+        
+        <script src="#{resource['js/jquery.js']}"></script>
+        
+           <h:outputStylesheet library="css" name="estilo.css"  />
+        <header class="cabecalho">
+           <div class="containerCabecalho clearfix"> 
+            <img alt="loltoxics" src="#{resource['img/logo.png']}"></img>
+            
+            <nav class="menuGenerico">
+             <ul class="clearfix">
+               <li class="" ><h:link value="Home" outcome="homeUsuario" /></li>
+                <li class="" ><h:link value="Ranking Geral" outcome="rankingGeral" /></li>
+               
+                <li class="nodeFacebook">
+                    <span id="nomeUsuario"></span>    
+                    <h:form>
+                      <h:commandButton class="botaoSair" value="Sair"  action="#{loginPageCode.encerrarSession()}"/>
+                    </h:form> 
+                </li>
+             </ul>
+           </nav>
+          </div>  
+        </header>
+         
+             <section class="containerPesquisa elementoSelecionado clearfix">
+              <h:form id="formularioPesquisa">
+                  <h:inputText id="nome" value="#{trollAPIBean.nomeTrollPesquisa}" pt:placeholder="Encontre o troll..."/>
+                  
+                  <h:commandButton value="Pesquisar" id="botaoReport" action="#{trollAPIBean.resultadoPesquisa()}" />
+               </h:form>
+           </section>
+        <style>
+            object {
+                display: none;
+            }
+        </style>
+<main>
+<section class="containerGeral clearfix">
+  <header>
+
+  </header>  
+
+        <div class="blocoResultadoPesquisa clearfix">
+    
+        <div class="trollNode clearfix">
+            <h:form id="formularioReporte">
+                <div class="nome"> <h:outputText value="#{trollAPIBean.nomeTrollPesquisado}" /></div>
+                <div class="posicaoRanking">Posição no ranking: <h:outputText value="#{trollAPIBean.posicaoTrollPesquisado}" /></div>
+                <div class="posicaoRanking">Pontuação: <h:outputText value="#{trollAPIBean.pontuacaoTrollPesquisado}" /></div>
+                <div class="reportar botoes">
+                    <h:inputHidden  id="idUsuario" value="#{trollAPIBean.idUsuario}" />
+                    
+                    <h:commandButton value="Reportar!" class="botaoReport" action="#{trollAPIBean.reportarTroll()}" />
+                </div>
+            </h:form>
+        </div> 
+        
+    </div>
+    
+  
+     
+   
+    </section>
+    </main>
+           
+
+            <script>
+    
+   function callbackStatus(response) {
+        if(response.status === 'connected'){
+             console.log('connectado');
+         
+            startAPI();
+            
+        } else if (response.status === 'not_authorized'){
+            console.log('por favor faça login');
+        }
+        else {
+            console.log('faca login no facebook');
+        }
+   } 
+     
+     
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1658605061028420',
+      xfbml      : true,
+      version    : 'v2.3'
+    });
+    
+    FB.getLoginStatus(function(response){
+        callbackStatus(response);
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+   
+   
+      
+   
+   function startAPI(){
+       FB.api('/me', function(response){
+           console.log(response);
+          
+           $('#nomeUsuario').text(response.name);
+           $('#formularioReporte\\:idUsuario').attr('value', response.id);
+       });
+   }
+            
+</script>  
+           
+           
+           
+       
+    </h:body>
+</html>

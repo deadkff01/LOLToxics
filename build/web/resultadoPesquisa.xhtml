@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+       xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+       xmlns:p="http://primefaces.org/ui"
+      >
+    <h:head>
+        <title>LOLtoxics</title>
+      
+    </h:head>
+    <h:body>
+        <script src="#{resource['js/jquery.js']}"></script>
+        
+        <script src="#{resource['js/riot-games-api-nodejs.js']}"></script>
+        <script src="#{resource['js/require.js']}"></script>
+        <script src="#{resource['js/main.js']}"></script>
+        <h:outputStylesheet library="css" name="estilo.css"  />
+        
+        
+        
+        <header class="cabecalho">
+           <div class="containerCabecalho clearfix"> 
+               <a href="index.xhtml"><img alt="loltoxics" src="#{resource['img/logo.png']}"></img></a>
+            
+            <nav class="menuGenerico">
+             <ul class="clearfix">
+               <li class=""><a href="index.xhtml">Home</a></li>
+               <li><a href="rankingGeral.xhtml">Ranking Geral</a></li>
+              
+               <li><a href="loginUsuario.xhtml">Login</a></li>
+             </ul>
+           </nav>
+          </div>  
+        </header>
+           <section class="containerPesquisa elementoSelecionado clearfix">
+              <h:form id="formularioPesquisa">
+                  <h:inputText id="nome" value="#{trollAPIBean.nomeTrollPesquisa}" pt:placeholder="Encontre o troll..."/>
+                  <h:commandButton value="Pesquisar" action="#{trollAPIBean.resultadoPesquisa()}" />
+               </h:form>
+           </section>
+        <style>
+            object {
+                display: none;
+            }
+        </style>
+<main>
+<section class="containerGeral clearfix">
+  <header>
+
+  </header>  
+
+        <div class="blocoResultadoPesquisa clearfix">
+    
+        <div class="trollNode clearfix">
+            <div class="nome"> <h:outputText value="#{trollAPIBean.nomeTrollPesquisado}" /></div>
+            <div class="posicaoRanking">Posição no ranking: <h:outputText value="#{trollAPIBean.posicaoTrollPesquisado}" /></div>
+            <div class="posicaoRanking">Pontuação: <h:outputText value="#{trollAPIBean.pontuacaoTrollPesquisado}" /></div>
+        </div> 
+        
+    </div>
+    
+  
+     
+   
+    </section>
+    </main>
+           
+           <script>
+               $(document).ready(function(){
+                  
+                 
+      
+              
+               });
+               
+           </script>
+    </h:body>
+</html>
